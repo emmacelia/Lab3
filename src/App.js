@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Content } from './Components/content';
 import { Header } from './Components/Header';
 import { Footer } from './Components/Footer';
-
+import { Read } from './Components/read';
+import { Create } from './Components/create';
 //imports for navigation bar
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -37,21 +38,24 @@ class App extends React.Component {
           {/* adds the dark Nav bar to the top of the webpage */}
           <Navbar bg="dark" variant="dark">
             <Container>
-              <Navbar.Brand href="#home">Menu</Navbar.Brand>
+              <Navbar.Brand href="/">Menu</Navbar.Brand>
               <Nav className="me-auto">
                 {/* Adds the name to the navigation bar */}
-                <Nav.Link href="/home">Home</Nav.Link>
-                <Nav.Link href="/Read">Read</Nav.Link>
-                <Nav.Link href="/Create">Create</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/read">Read</Nav.Link>
+                <Nav.Link href="/create">Create</Nav.Link>
+                <Nav.Link href="/footer">Footer</Nav.Link>
+
+
               </Nav>
             </Container>
           </Navbar>
           <Routes>
             {/* Routes the paths to display the content,header, footer  */}
-            <Route path='/home' element={<Content />}></Route>
-            <Route path='/Read' element={<Header />} />
-            <Route path='/Create' element={<Footer />}>
-            </Route>
+            <Route path='/' element={<Content />}></Route>
+            <Route path='/Footer' element={<Footer />}></Route>
+            <Route path='/read' element={<Read />}></Route>
+            <Route path='/create' element={<Create />}></Route>
           </Routes>
 
           <header className="App-header">
